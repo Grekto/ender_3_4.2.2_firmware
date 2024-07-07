@@ -1,9 +1,11 @@
 name: marlin_auto_build
 
 on:
+  # trigger if we change a build
   push:
     paths:
       - 'builds/**'
+  # trigger every night at 03:30
   schedule:
     - cron:  '30 3 * * *'
 
@@ -11,10 +13,4 @@ jobs:
   create_builds:
     runs-on: ubuntu-latest 
     steps:
-    - uses: actions/checkout@v2
-    - uses: zisismaras/marlin_auto_build@master
-    - name: Upload firmware artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: firmware-bin
-        path: path/to/generated/firmware.bin
+    - uses: Grekto/marlin_auto_build@v1
