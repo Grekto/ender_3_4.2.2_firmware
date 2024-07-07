@@ -11,7 +11,10 @@ jobs:
   create_builds:
     runs-on: ubuntu-latest 
     steps:
+    - uses: actions/checkout@v2
     - uses: zisismaras/marlin_auto_build@master
+    - name: Upload firmware artifact
+      uses: actions/upload-artifact@v2
       with:
-          github-token: ${{ secrets.GITHUB_TOKEN}}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+        name: firmware-bin
+        path: path/to/generated/firmware.bin
