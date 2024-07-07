@@ -9,5 +9,8 @@ module.exports = {
         enable: [
             ["GRID_MAX_POINTS_X", 5]
         ]
+	disable: [
+    "MIN_SOFTWARE_ENDSTOP_Z"
+		]	
     }
 };
