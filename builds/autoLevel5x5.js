@@ -8,10 +8,9 @@ module.exports = {
     configuration: {
         enable: [
             ["GRID_MAX_POINTS_X", 5]
+        ],
+        disable: [
+            "MIN_SOFTWARE_ENDSTOP_Z"
         ]
-	disable: [
-    "MIN_SOFTWARE_ENDSTOP_Z"
-		]	
     }
 };
-
