@@ -9,6 +9,10 @@ on:
 
 jobs:
   create_builds:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - uses: zisismaras/marlin_auto_build@master
+    - name: Workaround for GitHub Token
+      run: |
+        echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
